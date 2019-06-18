@@ -40,4 +40,5 @@ int main()
 	GET_ARRAY_LENGTH(array,length);
 	int newLength = removeDuplicates(array,length);
 	printf("%d\n", newLength);
+	return 0;
 }
