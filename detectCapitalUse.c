@@ -1,5 +1,7 @@
 #include "common.h"
-
+#define TRUE 1
+#define FALSE 0
+typedef int BOOL;
 /**
 给定一个单词，你需要判断单词的大写使用是否正确。
 我们定义，在以下情况时，单词的大写用法是正确的：
@@ -15,7 +17,7 @@
 输出: False
 注意: 输入是由大写和小写拉丁字母组成的非空单词。
  */
-int detectCapitalUse(char * word){
+BOOL detectCapitalUse(char * word){
     int sCount = 0;
     int bCount = 0;
     int index = 0;
@@ -33,20 +35,20 @@ int detectCapitalUse(char * word){
         ++index;
     };
     if(sCount == 0){
-        return 1;
+        return TRUE;
     }else if(bCount == 0){
-        return 1;
+        return TRUE;
     }else if(bCount == 1 && firstLoc == 0){
-        return 1;
+        return TRUE;
     }else{
-        return 0;
+        return FALSE;
     }
 }
 
 
 int main()
 {
-    if(detectCapitalUse("aHello") == 1){
+    if(detectCapitalUse("Hello") == TRUE){
         printf("符合规范\n");
     }else{
         printf("不符合规范\n");
